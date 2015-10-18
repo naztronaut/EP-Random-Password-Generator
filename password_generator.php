@@ -57,7 +57,11 @@
 
 // Activates code block if submit button is clicked
     if(isset($_POST['submit'])){
-
+	//Defaults to lower case password if no checkbox is selected - to prevent a NULL return
+        if(!isset($_POST['lowerc']) && !isset($_POST['upperc']) && !isset($_POST['numbers']) && !isset($_POST['symbols']))
+           {
+               $password1 = $lowercase;
+           }
         // Checks to see if lowercase checkbox is checked
         if(isset($_POST['lowerc'])){
             $password1 = $lowercase;
